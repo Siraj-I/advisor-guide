@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post65 | The Authority on Life After Series 65</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: { sans: ['Outfit', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                colors: { brand: { 900: '#0f172a', 800: '#1e293b', 600: '#2563eb', 500: '#3b82f6', gold: '#d97706', light: '#f8fafc' } }
+            }
+        }
+    }
+</script>
+<style>
+    .fade-enter { opacity: 0; transform: translateY(10px); }
+    .fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity 300ms, transform 300ms; }
+    .step-line::before { content: ''; position: absolute; top: 2rem; bottom: 0; left: 1.25rem; width: 2px; background: #e2e8f0; z-index: 0; }
+    .step-line:last-child::before { display: none; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-gold selection:text-white">
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16 items-center">
+<div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+<span class="material-symbols-outlined text-brand-gold text-3xl">verified_user</span>
+<span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Post<span class="text-brand-gold">65</span></span>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-slate-600 hover:text-brand-600 font-medium transition" href="#roadmap">The Roadmap</a>
+<a class="text-slate-600 hover:text-brand-600 font-medium transition" href="#compliance">Compliance Hub</a>
+<a class="text-slate-600 hover:text-brand-600 font-medium transition" href="#states">State Intel</a>
+</div>
+<button class="bg-brand-900 text-white px-5 py-2 rounded-full font-medium hover:bg-brand-800 transition shadow-lg shadow-brand-900/20" onclick="document.getElementById('roadmap').scrollIntoView()">Start Guide</button>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-900">
+<div class="absolute inset-0 z-0">
+<!-- Permanent Image: Abstract Data -->
+<img alt="Financial Background" class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" />
+<div class="absolute inset-0 bg-gradient-to-b from-brand-900/50 via-brand-900/80 to-slate-50"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold mb-6 animate-fade-in-up">
+<span class="material-symbols-outlined text-sm">school</span>
+<span class="text-sm font-semibold tracking-wide uppercase">Exam Passed? What's Next?</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">Don't Let Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-amber-200">Series 65</span><br/> Gather Dust.</h1>
+<p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">Passing the exam is just the prerequisite. The real work—registration, compliance, and launching your practice—starts now.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-brand-gold hover:bg-amber-600 text-white text-lg px-8 py-4 rounded-xl font-semibold transition transform hover:-translate-y-1 shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-2" onclick="scrollToSection('roadmap')">Build My Plan <span class="material-symbols-outlined">arrow_downward</span></button>
+</div>
+</div>
+</header>
+
+<!-- Interactive Roadmap Tool -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="roadmap">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-serif font-bold text-brand-900 mb-4">Choose Your Path</h2>
+<p class="text-lg text-slate-600 max-w-2xl mx-auto">Your registration journey depends entirely on your business model.</p>
+</div>
+<div class="flex justify-center mb-12">
+<div class="bg-slate-100 p-1.5 rounded-2xl inline-flex shadow-inner">
+<button class="px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 shadow-sm bg-white text-brand-900" id="btn-join" onclick="setPath('join')">Join a Firm</button>
+<button class="px-8 py-3 rounded-xl text-lg font-semibold text-slate-500 hover:text-brand-900 transition-all duration-300" id="btn-start" onclick="setPath('start')">Launch My Own RIA</button>
+</div>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl h-[600px] group">
+<!-- Dynamic Image Target -->
+<img alt="Career Path Visual" class="w-full h-full object-cover transition duration-700 transform group-hover:scale-105" id="path-image" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80" />
+<div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+<h3 class="text-2xl font-bold text-white mb-2" id="path-title">The Associate Path</h3>
+<p class="text-slate-200" id="path-desc">Perfect for advisors who want to focus on clients, not compliance logs. Leverages existing infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-slate-100 h-[600px] overflow-y-auto custom-scrollbar">
+<div class="space-y-0 relative" id="steps-container"></div>
+</div>
+</div>
+</section>
+
+<!-- Reg-Tech Interactive Tool -->
+<section class="bg-slate-900 text-white py-24 relative overflow-hidden" id="compliance">
+<div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-serif font-bold mb-6">Where Do I Register?</h2>
+<p class="text-slate-300 text-lg mb-8">The "SEC vs. State" question trips up many new advisors. Use this calculator to determine your likely regulator.</p>
+<div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 mb-8">
+<label class="block text-sm font-medium text-brand-gold mb-2 uppercase tracking-wider">Projected AUM (Assets Under Management)</label>
+<div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">$</span><input class="w-full bg-slate-800 border border-slate-700 rounded-xl py-4 pl-8 pr-4 text-white placeholder-slate-500 focus:ring-2 focus:ring-brand-gold outline-none transition" id="aum-input" oninput="calculateRegulator()" placeholder="e.g. 25000000" type="number"/></div>
+<div class="mt-4 flex gap-4 text-sm text-slate-400">
+<label class="flex items-center gap-2 cursor-pointer"><input class="rounded bg-slate-700 border-slate-600 text-brand-gold focus:ring-brand-gold" id="ny-check" onchange="calculateRegulator()" type="checkbox"/> Based in New York?</label>
+<label class="flex items-center gap-2 cursor-pointer"><input class="rounded bg-slate-700 border-slate-600 text-brand-gold focus:ring-brand-gold" id="online-check" onchange="calculateRegulator()" type="checkbox"/> Internet-Only Advisor?</label>
+</div>
+</div>
+<div class="hidden animate-fade-in-up" id="regulator-result"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-slate-800 p-6 rounded-2xl border border-slate-700"><span class="material-symbols-outlined text-brand-gold text-3xl mb-4">description</span><h4 class="font-bold text-lg mb-2">Form U4</h4><p class="text-slate-400 text-sm">The "User Profile". Registers YOU as an individual.</p></div>
+<div class="bg-slate-800 p-6 rounded-2xl border border-slate-700"><span class="material-symbols-outlined text-blue-400 text-3xl mb-4">apartment</span><h4 class="font-bold text-lg mb-2">Form ADV</h4><p class="text-slate-400 text-sm">The "Firm Profile". Part 1 is data, Part 2 is the brochure.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- State Intelligence Unit -->
+<section class="py-24 bg-white relative" id="states">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16"><span class="text-brand-600 font-bold tracking-wider uppercase text-sm">50-State Database</span><h2 class="text-4xl font-serif font-bold text-brand-900 mt-2 mb-4">State Specifics &amp; IAR CE</h2><p class="text-slate-600 max-w-2xl mx-auto">Regulations vary by zip code. We track which states have adopted the new IAR Continuing Education model rule.</p></div>
+<div class="bg-slate-50 rounded-3xl border border-slate-200 p-2 overflow-hidden shadow-lg max-w-4xl mx-auto">
+<div class="p-4 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3"><span class="material-symbols-outlined text-slate-400">search</span><select class="w-full bg-transparent outline-none text-slate-700 font-medium text-lg cursor-pointer appearance-none" id="state-select" onchange="renderStateData()"><option disabled="" selected="" value="">Select your registration state...</option></select><span class="material-symbols-outlined text-slate-400 pointer-events-none">expand_more</span></div>
+<div class="p-8 md:p-12 min-h-[300px] flex items-center justify-center text-center" id="state-display"><div class="text-slate-400"><span class="material-symbols-outlined text-6xl mb-4 text-slate-300">map</span><p class="text-lg">Select a jurisdiction to view 2024-2025 requirements.</p></div></div>
+</div>
+</div>
+</section>
+
+<script>
+    const paths = {
+        join: {
+            title: "Joining an Existing Firm",
+            desc: "The fastest route to working with clients. The firm handles the heavy lifting of compliance infrastructure.",
+            image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80",
+            steps: [
+                { title: "Report Results", desc: "Submit your Series 65 passing score report to your firm's Chief Compliance Officer (CCO).", icon: "assignment_turned_in" },
+                { title: "Form U4 Questionnaire", desc: "Complete the firm's internal questionnaire. Be honest about all financial and legal history.", icon: "fact_check" },
+                { title: "Fingerprinting", desc: "Schedule electronic fingerprinting (vendors like Sterling or Fieldprint) for background checks.", icon: "fingerprint" },
+                { title: "State Registration", desc: "The firm files your U4 via IARD. You must be registered in any state where you have a place of business.", icon: "map" },
+                { title: "Await Approval", desc: "Do NOT solicit clients until you receive the 'Approved' status confirmation from your CCO.", icon: "hourglass_top" }
+            ]
+        },
+        start: {
+            title: "Launching Your Own RIA",
+            desc: "Total control and equity. Requires establishing a legal entity and managing your own compliance program.",
+            image: "https://images.unsplash.com/photo-1593642532744-9365bf64af28?auto=format&fit=crop&q=80",
+            steps: [
+                { title: "Entity Formation", desc: "Form your LLC or Corporation and obtain an EIN from the IRS. This is the 'Firm'.", icon: "store" },
+                { title: "FINRA Entitlement", desc: "Apply for access to the IARD system to file forms electronically.", icon: "vpn_key" },
+                { title: "Form ADV Drafting", desc: "Draft Part 1A (Regulatory Data) and Part 2A (Client Brochure). This defines your fees and services.", icon: "description" },
+                { title: "File U4 & ADV", desc: "Submit the firm's ADV and your individual U4. Pay state-specific filing fees via the IARD Flex Account.", icon: "send" },
+                { title: "Client Agreements", desc: "Finalize your Investment Advisory Agreement (IAA) and Privacy Policy before onboarding the first client.", icon: "history_edu" }
+            ]
+        }
+    };
+
+    const states = [
+        { code: 'AL', name: 'Alabama', ce: false, fee: '$70', notes: 'Registration required via IARD.' },
+        { code: 'CA', name: 'California', ce: true, fee: '$125', notes: 'IAR CE Active. Specific custody rules apply.' },
+        { code: 'CO', name: 'Colorado', ce: true, fee: '$35', notes: 'IAR CE Active. Sole props file ADV+U4.' },
+        { code: 'FL', name: 'Florida', ce: true, fee: '$50', notes: 'IAR CE Active. Fingerprints required.' },
+        { code: 'NY', name: 'New York', ce: false, fee: '$200', notes: 'NY Form NY-IAQ may be required. Unique rules.' },
+        { code: 'TX', name: 'Texas', ce: false, fee: '$35', notes: 'Notice filing for SEC firms is $100.' },
+        { code: 'other', name: 'Other States', ce: false, fee: 'Varies', notes: 'Check your specific state regulator via NASAA website.' }
+    ];
+
+    function init() {
+        const select = document.getElementById('state-select');
+        states.forEach(state => {
+            const opt = document.createElement('option');
+            opt.value = state.code;
+            opt.textContent = state.name;
+            select.appendChild(opt);
+        });
+        setPath('join');
+    }
+
+    function setPath(pathName) {
+        const data = paths[pathName];
+        const btnJoin = document.getElementById('btn-join');
+        const btnStart = document.getElementById('btn-start');
+        const container = document.getElementById('steps-container');
+        const img = document.getElementById('path-image');
+        const title = document.getElementById('path-title');
+        const desc = document.getElementById('path-desc');
+
+        if (pathName === 'join') {
+            btnJoin.className = "px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 shadow-sm bg-white text-brand-900 border border-slate-200";
+            btnStart.className = "px-8 py-3 rounded-xl text-lg font-semibold text-slate-500 hover:text-brand-900 transition-all duration-300";
+        } else {
+            btnStart.className = "px-8 py-3 rounded-xl text-lg font-semibold transition-all duration-300 shadow-sm bg-white text-brand-900 border border-slate-200";
+            btnJoin.className = "px-8 py-3 rounded-xl text-lg font-semibold text-slate-500 hover:text-brand-900 transition-all duration-300";
+        }
+
+        img.style.opacity = '0';
+        setTimeout(() => {
+            img.src = data.image;
+            title.textContent = data.title;
+            desc.textContent = data.desc;
+            img.onload = () => { img.style.opacity = '1'; }
+        }, 300);
+
+        container.innerHTML = '';
+        data.steps.forEach((step, index) => {
+            const div = document.createElement('div');
+            div.className = "step-line relative pl-12 pb-12 fade-enter";
+            div.style.animationDelay = (index * 100) + 'ms';
+            div.innerHTML = `<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-brand-light border-2 border-brand-200 flex items-center justify-center z-10"><span class="material-symbols-outlined text-brand-600 text-xl">${step.icon}</span></div><div><h4 class="text-xl font-bold text-slate-800 mb-2">${step.title}</h4><p class="text-slate-600 leading-relaxed">${step.desc}</p></div>`;
+            container.appendChild(div);
+            setTimeout(() => div.classList.add('fade-enter-active'), 50);
+        });
+    }
+
+    function renderStateData() {
+        const code = document.getElementById('state-select').value;
+        const state = states.find(s => s.code === code);
+        const display = document.getElementById('state-display');
+        if (!state) return;
+        display.innerHTML = `<div class="w-full text-left animate-fade-in-up"><div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6"><h3 class="text-3xl font-serif font-bold text-brand-900">${state.name}</h3>${state.ce ? '<span class="bg-brand-gold/10 text-brand-gold px-3 py-1 rounded-full text-sm font-bold border border-brand-gold/20 flex items-center gap-1"><span class="material-symbols-outlined text-sm">school</span> IAR CE ACTIVE</span>' : '<span class="bg-slate-100 text-slate-500 px-3 py-1 rounded-full text-sm font-bold border border-slate-200">NO IAR CE YET</span>'}</div><div class="grid md:grid-cols-2 gap-8"><div><div class="mb-4"><p class="text-xs uppercase tracking-wide text-slate-400 font-bold mb-1">Estimated Reg. Fee</p><p class="text-2xl font-bold text-slate-700">${state.fee}</p></div><div><p class="text-xs uppercase tracking-wide text-slate-400 font-bold mb-1">Regulator Code</p><p class="text-lg font-medium text-slate-700">${state.code}</p></div></div><div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm"><h4 class="font-bold text-brand-600 mb-2 flex items-center gap-2"><span class="material-symbols-outlined">info</span> Compliance Note</h4><p class="text-slate-600 leading-relaxed text-sm">${state.notes}</p></div></div></div>`;
+    }
+
+    function calculateRegulator() {
+        const aum = parseFloat(document.getElementById('aum-input').value) || 0;
+        const inNY = document.getElementById('ny-check').checked;
+        const isOnline = document.getElementById('online-check').checked;
+        const resultDiv = document.getElementById('regulator-result');
+        let title = "", message = "", colorClass = "";
+        
+        if (isOnline) { title = "SEC Registration Eligible"; message = "The 'Internet Only' exemption allows registration with the SEC regardless of AUM."; colorClass = "bg-blue-600"; }
+        else if (aum >= 100000000 && aum < 110000000) { title = "Choice: SEC or State"; message = "You are in the 'buffer zone'. You can likely choose."; colorClass = "bg-purple-600"; }
+        else if (aum >= 110000000) { title = "SEC Registration Required"; message = "You exceed the $110M threshold."; colorClass = "bg-green-600"; }
+        else if (inNY && aum >= 25000000 && aum < 100000000) { title = "SEC Registration Required (NY Exception)"; message = "New York does not register advisors between $25M-$100M."; colorClass = "bg-blue-600"; }
+        else { title = "State Registration Required"; message = "You are under the $100M threshold."; colorClass = "bg-brand-gold"; }
+
+        resultDiv.className = `mt-6 p-6 rounded-xl border border-white/20 animate-fade-in-up ${colorClass}`;
+        resultDiv.innerHTML = `<div class="flex items-start gap-4"><span class="material-symbols-outlined text-3xl bg-white/20 p-2 rounded-full">gavel</span><div><h4 class="text-xl font-bold text-white mb-1">${title}</h4><p class="text-white/90 text-sm leading-relaxed">${message}</p></div></div>`;
+        resultDiv.classList.remove('hidden');
+    }
+
+    function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+    window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
